@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .c { animation-duration: 9s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.45,0,.2,1); }
+    #you { animation-name: you; }
+    #sel { transform-box: fill-box; transform-origin: 0 0; animation-name: sel; }
+    #size { animation-name: size; }
+    #ad { animation-name: ad; }
+    #bub { transform-box: fill-box; transform-origin: 0 100%; animation-name: bub; }
+    @keyframes you {
+      0%, 100% { transform: translate(1010px, 262px); }
+      18%      { transform: translate(66px, 58px); }
+      22%      { transform: translate(66px, 58px); animation-timing-function: cubic-bezier(.3,0,.25,1); }
+      38%, 52% { transform: translate(560px, 246px); }
+      70%, 80% { transform: translate(760px, 300px); }
+    }
+    @keyframes sel {
+      0%, 22%  { opacity: 0; transform: scale(0, 0); animation-timing-function: step-end; }
+      22.1%    { opacity: 1; transform: scale(0, 0); animation-timing-function: cubic-bezier(.3,0,.25,1); }
+      38%, 76% { opacity: 1; transform: scale(1, 1); }
+      82%, 100%{ opacity: 0; transform: scale(1, 1); }
+    }
+    @keyframes size {
+      0%, 38%, 82%, 100% { opacity: 0; }
+      41%, 76% { opacity: 1; }
+    }
+    @keyframes ad {
+      0%, 100% { transform: translate(1150px, 120px); }
+      30%      { transform: translate(930px, 70px); }
+      46%, 50% { transform: translate(602px, 72px); }
+      58%, 74% { transform: translate(650px, 96px); }
+      88%      { transform: translate(1080px, 196px); }
+    }
+    @keyframes bub {
+      0%, 49%  { opacity: 0; transform: scale(.4); }
+      53%, 76% { opacity: 1; transform: scale(1); }
+      82%, 100%{ opacity: 0; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .c, #ad { animation: none; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6B42F7"/>
+      <stop offset="1" stop-color="#5A2FE6"/>
+    </linearGradient>
+    <radialGradient id="lime" cx="0.9" cy="0.05" r="0.45">
+      <stop offset="0" stop-color="#B8FF1A" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#B8FF1A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="deep" cx="0.05" cy="1" r="0.6">
+      <stop offset="0" stop-color="#260C96" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#260C96" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".35" stop-color="#fff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="floor">
+      <rect x="0" y="150" width="1280" height="210" fill="url(#fade)"/>
+    </mask>
+    <path id="arrow" d="M0 0V19.5L5.1 14.8L8.9 22.6L12.3 21L8.6 13.4L15.6 13Z"/>
+  </defs>
+
+  <rect width="1280" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#deep)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#lime)"/>
+
+  <!-- сетка-«пол» с наклоном -->
+  <g mask="url(#floor)" stroke="#fff" stroke-opacity=".22" stroke-width="1">
+    <path d="M0 176H1280M0 186H1280M0 199H1280M0 215H1280M0 235H1280M0 260H1280M0 290H1280M0 326H1280"/>
+    <path d="M640 150L-1000 360M640 150L-640 360M640 150L-320 360M640 150L0 360M640 150L320 360M640 150L640 360M640 150L960 360M640 150L1280 360M640 150L1600 360M640 150L1920 360M640 150L2280 360"/>
+  </g>
+
+  <!-- имя и роль -->
+  <text x="72" y="150" fill="#fff" font-size="96" font-weight="700" letter-spacing="-4">yourich</text>
+  <text x="76" y="196" fill="#fff" fill-opacity=".86" font-size="26" letter-spacing="-.5">продуктовый дизайнер</text>
+  <text x="76" y="232" fill="#fff" fill-opacity=".62" font-size="20">продукт / бренд / AI based designer</text>
+
+  <!-- выделение вокруг имени -->
+  <g id="sel" class="c">
+    <rect x="66" y="58" width="494" height="188" fill="#B8FF1A" fill-opacity=".08" stroke="#B8FF1A" stroke-width="2"/>
+    <rect x="62" y="54" width="8" height="8" fill="#fff" stroke="#B8FF1A"/>
+    <rect x="556" y="54" width="8" height="8" fill="#fff" stroke="#B8FF1A"/>
+    <rect x="62" y="242" width="8" height="8" fill="#fff" stroke="#B8FF1A"/>
+    <rect x="556" y="242" width="8" height="8" fill="#fff" stroke="#B8FF1A"/>
+  </g>
+  <g id="size" class="c">
+    <rect x="266" y="258" width="94" height="24" rx="4" fill="#B8FF1A"/>
+    <text x="313" y="275" fill="#1C1030" font-size="13" text-anchor="middle">494 × 188</text>
+  </g>
+
+  <!-- арт-директор с комментарием -->
+  <g id="ad" class="c">
+    <use href="#arrow" fill="#fff" stroke="#4A22D8" stroke-width="1.2"/>
+    <rect x="12" y="24" width="112" height="26" rx="4" fill="#fff"/>
+    <text x="22" y="42" fill="#4A22D8" font-size="14">арт-директор</text>
+    <g id="bub" class="c">
+      <rect x="28" y="-60" width="104" height="44" rx="12" fill="#fff"/>
+      <text x="42" y="-42" fill="#6B5AA8" font-size="11" font-weight="700">арт-директор</text>
+      <text x="42" y="-25" fill="#1C1030" font-size="14">огонь 🔥</text>
+    </g>
+  </g>
+
+  <!-- yourich -->
+  <g id="you" class="c">
+    <use href="#arrow" fill="#B8FF1A" stroke="#fff" stroke-width="1.2"/>
+    <rect x="12" y="24" width="72" height="26" rx="4" fill="#B8FF1A"/>
+    <text x="22" y="42" fill="#1C1030" font-size="14">yourich</text>
+  </g>
+</svg>
